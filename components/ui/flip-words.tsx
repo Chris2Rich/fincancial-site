@@ -81,7 +81,7 @@ export const FlipWords = ({
                 initial={{ opacity: 0, y: 50, filter: "blur(16px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{
-                  delay: wordIndex * 0.4 + letterIndex * 0.1,
+                  delay: wordIndex * 0.15 + letterIndex * 0.05,
                   duration: 0.5,
                 }}
                 className="inline-block text-shadow-lg shadow-indigo-500 bg-clip-text text-transparent bg-gradient-to-t from-indigo-500 to-purple-500"
