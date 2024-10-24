@@ -81,7 +81,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="1"
-        className="font-[helvetica] font-bold text-7xl  stroke-neutral-500"
+        className="font-['Rubik Mono One'] font-bold text-7xl  stroke-neutral-500"
         style={{ opacity: hovered ? 0.7 : 0.7 }}
       >
         {text}
@@ -92,7 +92,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="3"
-        className="font-[helvetica] font-bold text-7xl stroke-indigo-500 blur"
+        className="font-['Rubik Mono One'] font-bold text-7xl stroke-indigo-500 blur"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -111,7 +111,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth=".75"
-        className="font-[helvetica] font-bold text-7xl stroke-purple-500"
+        className="font-['Rubik Mono One'] font-bold text-7xl stroke-purple-500"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -124,18 +124,6 @@ export const TextHoverEffect = ({
       >
         {text}
       </motion.text>
-      <text
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        stroke="url(#textGradient)"
-        strokeWidth="1"
-        mask="url(#textMask)"
-        className="font-[helvetica] font-bold text-transparent stroke-neutral-500 text-7xl  "
-      >
-        {text}
-      </text>
     </svg>
   );
 };

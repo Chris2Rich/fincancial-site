@@ -74,9 +74,15 @@ const config: Config = {
             backgroundPosition: "-200% 0",
           },
         },
+		
+      },
+	  textShadow: {
+        sm: '0 0px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 0px 4px var(--tw-shadow-color)',
+        lg: '0 0px 16px var(--tw-shadow-color)',
       },
   },
-  plugins: [require("tailwindcss-animate"), addVariablesForColors],
+  plugins: [require("tailwindcss-animate"), addVariablesForColors, text_shadow ],
 }
 function addVariablesForColors({ addBase, theme }: any) {
 	let allColors = flattenColorPalette(theme("colors"));
@@ -88,4 +94,15 @@ function addVariablesForColors({ addBase, theme }: any) {
 	  ":root": newVars,
 	})
   }
+
+function text_shadow({ matchUtilities, theme }: any) {
+	matchUtilities(
+	  {
+		'text-shadow': (value:any) => ({
+		  textShadow: value,
+		}),
+	  },
+	  { values: theme('textShadow') }
+	)
+}
 export default config

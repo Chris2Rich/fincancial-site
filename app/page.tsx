@@ -9,11 +9,11 @@ function HeroText() {
   const words = ["new, key insights", "sources of alpha", "your next trade"]
  
   return (
-    <div className="flex justify-center items-center px-4">
+    <div className="flex justify-center items-center px-4 select-none">
       <div className="relative z-10 text-lg md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold">
-        Discover <FlipWords words={words} duration={5000} className="bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 "/>
+        Discover <FlipWords words={words} duration={5000} className="bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500"/>
         with 
-        <div className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 scale-75">
+        <div className="scale-75">
           <TextHoverEffect text="Temeer"></TextHoverEffect>
         </div>
       </div>
