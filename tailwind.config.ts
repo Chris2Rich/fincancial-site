@@ -60,7 +60,12 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		spacing: {
+		'128': '32rem',
+		'192': '48rem',
+		'256': '64rem',
+		}
   	},
 	  animation: {
         shimmer: "shimmer 2s linear infinite",
@@ -77,9 +82,9 @@ const config: Config = {
 		
       },
 	  textShadow: {
-        sm: '0 0px 2px var(--tw-shadow-color)',
-        DEFAULT: '0 0px 4px var(--tw-shadow-color)',
-        lg: '0 0px 16px var(--tw-shadow-color)',
+        xs: '0 0px 2px var(--tw-shadow-color)',
+        sm: '0 0px 4px var(--tw-shadow-color)',
+        DEFAULT: '0 0px 16px var(--tw-shadow-color)',
       },
   },
   plugins: [require("tailwindcss-animate"), addVariablesForColors, text_shadow ],

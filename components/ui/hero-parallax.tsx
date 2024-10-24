@@ -101,11 +101,12 @@ export const HeroParallax = ({
   );
 };
 
-export const Header = () => {
+const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
+    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        Find <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 text-center font-sans font-bold">that</span> insight
+        Find <span className="bg-clip-text text-transparent text-shadow shadow-purple-500 bg-gradient-to-r from-indigo-500 to-purple-500 text-center font-sans font-bold">that</span> insight<br />
+        that will <span className="bg-clip-text text-transparent text-shadow shadow-purple-500 bg-gradient-to-r from-indigo-500 to-purple-500 text-center font-sans font-bold">shock</span><br /> your meeting
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
         Use Temeer to provide the insight you need to excel. We provide powerfully collated and processed financial datasets that enable anybody to understand markets. 
@@ -114,7 +115,7 @@ export const Header = () => {
   );
 };
 
-export const ProductCard = ({
+const ProductCard = ({
   product,
   translate,
 }: {
@@ -144,12 +145,12 @@ export const ProductCard = ({
           src={product.thumbnail}
           height="600"
           width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
+          className="object-cover object-left-top absolute h-full w-full inset-0 rounded-2xl"
           alt={product.title}
         />
       </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <div className="absolute inset-0 h-full w-full opacity-0 rounded-2xl group-hover/product:opacity-50 bg-black pointer-events-none"></div>
+      <h2 className="absolute top-72 left-48 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
       </h2>
     </motion.div>
