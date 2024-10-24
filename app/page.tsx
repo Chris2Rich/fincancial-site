@@ -11,7 +11,7 @@ function HeroText() {
   return (
     <div className="flex justify-center items-center px-4">
       <div className="relative z-10 text-lg md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold">
-        Discover <FlipWords words={words} duration={5000} className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 blur"/>
+        Discover <FlipWords words={words} duration={5000} className="bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 "/>
         with 
         <div className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 scale-75">
           <TextHoverEffect text="Temeer"></TextHoverEffect>
@@ -27,7 +27,13 @@ const products = [
     link: "https://gomoonbeam.com",
     thumbnail:
       "/tt.png",
-  }
+  },
+  {
+    title: "Madara",
+    link: "https://gomoonbeam.com",
+    thumbnail:
+      "/tt.png",
+  }, 
 ]
 
 export default function Home() {
