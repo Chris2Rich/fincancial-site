@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import type { PluginAPI } from 'tailwindcss/types/config'
 
 const colors = require("tailwindcss/colors")
 const {
@@ -65,10 +66,18 @@ const config: Config = {
 		'128': '32rem',
 		'192': '48rem',
 		'256': '64rem',
-		}
+		},
+		boxShadow: {
+			'glow-sm': '0 0px 2px var(--glow-color)',
+			'glow-md': '0 0px 4px var(--glow-color)',
+			'glow-lg': '0 0px 8px var(--glow-color)',
+			'glow-xl': '0 0px 16px var(--glow-color)', 
+			'glow': '0 0px 2px var(--glow-color), 0 0px 4px var(--glow-color), 0 0px 8px var(--glow-color), 0 0px 16px var(--glow-color)',
+		},
   	},
 	  animation: {
         shimmer: "shimmer 2s linear infinite",
+		scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       keyframes: {
         shimmer: {
@@ -79,6 +88,11 @@ const config: Config = {
             backgroundPosition: "-200% 0",
           },
         },
+		scroll: {
+			to: {
+			  transform: "translate(calc(-50% - 0.5rem))",
+			},
+		  },
 		
       },
 	  textShadow: {
@@ -87,7 +101,7 @@ const config: Config = {
         DEFAULT: '0 0px 16px var(--tw-shadow-color)',
       },
   },
-  plugins: [require("tailwindcss-animate"), addVariablesForColors, text_shadow ],
+  plugins: [require("tailwindcss-animate"), addVariablesForColors, text_shadow, glow_color, require('tailwind-scrollbar') ],
 }
 function addVariablesForColors({ addBase, theme }: any) {
 	let allColors = flattenColorPalette(theme("colors"));
@@ -110,4 +124,24 @@ function text_shadow({ matchUtilities, theme }: any) {
 	  { values: theme('textShadow') }
 	)
 }
+
+function glow_color({ addUtilities, theme }: PluginAPI) {
+	const colors = theme('colors') as Record<string, string | Record<string, string>>
+	const utilities = Object.entries(colors).reduce<Record<string, { '--glow-color': string }>>((acc, [colorName, color]) => {
+	  if (typeof color === 'object') {
+		Object.entries(color).forEach(([shade, value]) => {
+		  acc[`.glow-${colorName}-${shade}`] = {
+			'--glow-color': value
+		  }
+		})
+	  } else {
+		acc[`.glow-${colorName}`] = {
+		  '--glow-color': color
+		}
+	  }
+	  return acc
+	}, {})
+   
+	addUtilities(utilities)
+  }
 export default config
