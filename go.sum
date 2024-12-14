@@ -1,4 +1,2 @@
-github.com/go-hdf5/hdf5 v0.0.0-20181019171347-af9b4abfc071 h1:EQQMwK+dTB6L6mQo7yZgcrud+zGZNP4cBaqdQlFLXzk=
-github.com/go-hdf5/hdf5 v0.0.0-20181019171347-af9b4abfc071/go.mod h1:YM8WqOXWAGtJk5hUTDR3FinviXBugbZ34e/PpA2Q7E4=
-github.com/pkg/errors v0.8.0 h1:WdK/asTD0HN+q6hsWO3/vpuAkAr+tw6aNJNDFFf0+qw=
-github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/sbinet/go-hdf5 v0.0.0-20170101193951-f747bbf37277 h1:+nB9Qrh+hXBW1jIYTNinR6QbKZ/SDJ9UlEfDmLsZFnU=
+github.com/sbinet/go-hdf5 v0.0.0-20170101193951-f747bbf37277/go.mod h1:lAllWC8yd0QD2mpf1TPezt4w9Ai0b4K1t538G4mnoT4=
